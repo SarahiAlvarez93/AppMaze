@@ -29,6 +29,7 @@ export const SearchBar = () => {
     setBusqueda(e.target[0].value)
   }
   console.log(busqueda)
+  // console.log(datos[0].show.summary)
   return (
     <>
       <div className='BarraNav'>
@@ -45,7 +46,7 @@ export const SearchBar = () => {
         </div>
       </div>
       {!loading &&
-        datos.map((peli, index) => <Card nombre={peli.show.name} imagen={peli.show.image.medium} key={index} />)}
+        datos.map((peli, index) => <Card nombre={peli.show.name} imagen={peli.show.image.medium} resumen={peli.show.summary} id={peli.show.id} key={index} />)}
 
     </>
   )

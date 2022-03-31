@@ -1,5 +1,5 @@
 
-export const Card = ({ nombre, imagen }) => {
+export const Card = ({ nombre, imagen, resumen, id }) => {
   if (imagen == null) {
     imagen = 'https://static.tvmaze.com/uploads/images/medium_portrait/137/344032.jpg'
   }
@@ -7,6 +7,8 @@ export const Card = ({ nombre, imagen }) => {
     <div className='card'>
       <p>Nombre: {nombre} </p>
       <img src={imagen} alt='' />
+      <p>{resumen}</p>
+      <p>ID: {id}</p>
     </div>
   )
 }

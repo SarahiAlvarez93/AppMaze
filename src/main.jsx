@@ -7,7 +7,6 @@ import { SearchBar } from './components/SearchBar'
 render(
   <StrictMode>
     <SearchBar />
-    <App />
   </StrictMode>,
   document.getElementById('root')
 )
