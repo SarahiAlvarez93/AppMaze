@@ -6,7 +6,7 @@ import './searchbar.scss'
 export const SearchBar = () => {
   const [datos, setDatos] = useState({})
   const [error, setError] = useState('')
-  const [busqueda, setBusqueda] = useState('transformer')
+  const [busqueda, setBusqueda] = useState('')
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -37,16 +37,14 @@ export const SearchBar = () => {
           <h2>De<span>Película</span></h2>
         </nav>
         <div>
-          <a href='/'>Inicio</a>
-          <a href='/'>Series</a>
-          <a href='/'>Películas</a>
+
           <form onSubmit={(e) => search(e)}>
             <input type='text' placeholder='Introduce tu serie o pelicula' />
           </form>
         </div>
       </div>
       {!loading &&
-        datos.map((peli, index) => <Card nombre={peli.show.name} imagen={peli.show.image.medium} resumen={peli.show.summary} id={peli.show.id} key={index} />)}
+        datos.map((peli, index) => <Card nombre={peli.show.name} imagen={peli.show.image} resumen={peli.show.summary} id={peli.show.id} key={index} />)}
 
     </>
   )

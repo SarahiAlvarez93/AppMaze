@@ -1,12 +1,11 @@
 import { StrictMode } from 'react'
 import { render } from 'react-dom'
 import './styles/index.css'
-import App from './components/App/App'
-import { SearchBar } from './components/SearchBar'
+import { Paths } from './routes'
 
 render(
   <StrictMode>
-    <SearchBar />
+    <Paths />
   </StrictMode>,
   document.getElementById('root')
 )
