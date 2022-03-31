@@ -1,4 +1,41 @@
-nav {
-  background-color: aquamarine;
-  color: black;
+.BarraNav {
+  padding: .4rem;
+  background-color: #14213d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    margin-right: 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  input {
+    width: 20rem;
+    height: 2rem;
+    border-radius: 25px;
+    margin-right: 2rem;
+    outline: none;
+    padding: 0 2rem;
+    border: 1px solid black;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  nav {
+    h2 {
+      margin-left: 2rem;
+      color: white;
+      font-weight: 400;
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+
 }
+

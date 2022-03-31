@@ -1,17 +1,20 @@
 import { useState, useEffect } from 'react'
 import { fetchResult } from '../../utils/fetchResult'
+import { Card } from '../Card'
 import './searchbar.scss'
 
 export const SearchBar = () => {
   const [datos, setDatos] = useState({})
   const [error, setError] = useState('')
-  const [busqueda, setBusqueda] = useState('boys')
+  const [busqueda, setBusqueda] = useState('transformer')
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const data = async () => {
       try {
         const res = await fetchResult(busqueda)
         setDatos(res)
+        setLoading(false)
       } catch (error) {
         setError(error)
       }
@@ -28,13 +31,22 @@ export const SearchBar = () => {
   console.log(busqueda)
   return (
     <>
-      <form onSubmit={(e) => search(e)}>
-        <input type='text' />
-
-      </form>
-      <div className='card'>
-        <p>El nombre de la peli es: {datos[0].show.name} </p>
+      <div className='BarraNav'>
+        <nav>
+          <h2>De<span>Película</span></h2>
+        </nav>
+        <div>
+          <a href='/'>Inicio</a>
+          <a href='/'>Series</a>
+          <a href='/'>Películas</a>
+          <form onSubmit={(e) => search(e)}>
+            <input type='text' placeholder='Introduce tu serie o pelicula' />
+          </form>
+        </div>
       </div>
+      {!loading &&
+        datos.map((peli, index) => <Card nombre={peli.show.name} imagen={peli.show.image.medium} key={index} />)}
+
     </>
   )
 }
