@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import { fetchEpisodes } from '../../utils/fetchEpisodes'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import './detalle.scss'
 
 export const Detalle = () => {
-  const { id, nombre } = useParams()
+  const { id } = useParams()
   const [episodios, setEpisodios] = useState([])
 
   useEffect(() => {
